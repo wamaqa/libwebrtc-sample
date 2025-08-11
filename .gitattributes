@@ -1,0 +1,2 @@
+lib/win64/debug/webrtc.lib filter=lfs diff=lfs merge=lfs -text
+lib/win64/release/webrtc.lib filter=lfs diff=lfs merge=lfs -text

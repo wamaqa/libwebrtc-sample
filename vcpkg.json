@@ -1,0 +1,30 @@
+{
+  "dependencies": [
+    "sdl3",
+    {
+      "name": "glad",
+      "features": [
+        "gl-api-latest"
+      ]
+    },
+    {
+      "name": "imgui",
+      "features": [
+        "freetype",
+        "freetype-svg",
+        "opengl3-binding",
+        "sdl3-binding",
+        "sdl3-renderer-binding"
+      ]
+    },
+    {
+      "name": "cpp-httplib",
+      "features": [
+        "brotli",
+        "openssl",
+        "zlib",
+        "zstd"
+      ]
+    }
+  ]
+}

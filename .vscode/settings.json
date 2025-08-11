@@ -1,0 +1,8 @@
+{
+    "i18n-ally.localesPaths": [
+        "Includes/base/i18n"
+    ],
+    "cSpell.words": [
+        "peerconnection"
+    ]
+}

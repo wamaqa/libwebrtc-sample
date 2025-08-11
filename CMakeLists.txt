@@ -1,0 +1,27 @@
+cmake_minimum_required (VERSION 3.13)
+set(PROJECT_NAME "LibWebrtc")
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+
+function(append_sources group_name var src_dir)
+    file(GLOB group_files ${src_dir}/*.cpp ${src_dir}/*.c ${src_dir}/*.cc ${src_dir}/*.hpp ${src_dir}/*.h)
+    include_directories(${src_dir})
+    source_group("${group_name}" FILES ${group_files})
+    set(${var} ${${var}} ${group_files} PARENT_SCOPE)
+endfunction()
+
+if(CMAKE_HOST_WIN32)
+#   set(VCPKG_TARGET_TRIPLET x64-windows-static-md)
+    set(CMAKE_TOOLCHAIN_FILE D:/vcpkg/scripts/buildsystems/vcpkg.cmake)
+
+elseif(CMAKE_HOST_UNIX)
+    set(VCPKG_TARGET_TRIPLET x64-linux)
+    set(CMAKE_TOOLCHAIN_FILE /mnt/d/vcpkg/scripts/buildsystems/vcpkg.cmake)
+endif()
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_C_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(SOURCE_ROOT ${CMAKE_CURRENT_SOURCE_DIR})
+include_directories(include)
+project (${PROJECT_NAME})
+add_subdirectory(sample)
